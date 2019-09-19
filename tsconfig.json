@@ -3,7 +3,6 @@
     "allowJs": false,
     "esModuleInterop": true,
     "allowUnusedLabels": true,
-    "baseUrl": ".",
     "experimentalDecorators": true,
     "declaration": true,
     "jsx": "react",
@@ -12,21 +11,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "dist/ts",
-    "paths": {
-      "*": ["types/modules/*"],
-      "@/*": ["src/*"]
-    },
     "removeComments": true,
     "sourceMap": true,
     "strict": true,
     "target": "es2017"
-  },
-  "include": [
-    "src/**/*",
-    "types/**/*"
-  ],
-  "exclude": [
-    "build",
-    "__tests__"
-  ]
+  }
 }

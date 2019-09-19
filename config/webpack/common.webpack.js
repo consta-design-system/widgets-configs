@@ -8,9 +8,9 @@ const babelConfig = require('./babel')
 const { css } = require('./css')
 
 const isProduction = process.env.NODE_ENV === 'production'
-const root = path.resolve(__dirname, '..', '..')
+const root = path.resolve(process.env.ROOT_PATH)
 
-module.exports = ({ withDocgen }) => ({
+module.exports = ({ withDocgen, isLibBuilding } = {}) => ({
   mode: isProduction ? 'production' : 'development',
 
   output: {
@@ -53,10 +53,19 @@ module.exports = ({ withDocgen }) => ({
             loader: 'ts-loader',
             options: {
               compilerOptions: {
+                ...(isLibBuilding
+                  ? {
+                    ...tsConfig.compilerOptions,
+                    moduleResolution: 'node',
+                    outDir: 'lib/@types',
+                    incremental: !isProduction,
+                    skipLibCheck: !isProduction,
+                    typeRoots: ['node_modules/@types'],
+                  }
+                  : {}),
                 module: 'esnext',
               },
-              // Avoid typechecking, to speed up bundling
-              transpileOnly: true,
+              transpileOnly: !isLibBuilding,
             },
           },
         ].filter(Boolean),
@@ -103,9 +112,15 @@ module.exports = ({ withDocgen }) => ({
 
   plugins: [
     new webpack.ProvidePlugin({ React: 'react' }),
-    new MiniCssExtractPlugin({
-      chunkFilename: 'assets/css/[id].css',
-      filename: `assets/css/[name]${isProduction ? '.[contenthash]' : ''}.css`,
-    }),
+    new MiniCssExtractPlugin(
+      isLibBuilding
+        ? {
+          filename: 'index.css',
+        }
+        : {
+          chunkFilename: 'assets/css/[id].css',
+          filename: `assets/css/[name]${isProduction ? '.[contenthash]' : ''}.css`,
+        }
+    ),
   ],
 })

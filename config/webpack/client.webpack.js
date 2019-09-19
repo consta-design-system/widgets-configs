@@ -2,6 +2,8 @@ const chalk = require('chalk')
 const ora = require('ora')
 const path = require('path')
 const webpackMerge = require('webpack-merge')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
@@ -10,13 +12,14 @@ const getCommonConfig = require('./common.webpack')
 const { cssRules } = require('./css')
 
 const isProduction = process.env.NODE_ENV === 'production'
+const root = path.resolve(process.env.ROOT_PATH)
 const spinner = ora()
 
 const clientConfig = {
-  entry: [path.resolve(__dirname, '..', '..', 'src', 'index.tsx')],
+  entry: [path.resolve(root, 'src', 'index.tsx')],
   name: 'client',
   output: {
-    path: path.resolve(__dirname, '..', '..', 'build'),
+    path: path.resolve(root, 'build'),
   },
 
   optimization: {
@@ -45,6 +48,15 @@ const clientConfig = {
       }),
     ],
   },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: 'src/index.html',
+    }),
+
+    new CopyWebpackPlugin([{ from: 'public', to: '' }]),
+  ],
 }
 
 const developmentConfig = {
