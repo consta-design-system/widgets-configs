@@ -1,9 +1,9 @@
 const chalk = require('chalk')
 
-const { build, spinner } = require('./tools')
+const { build, common } = require('./tools')
 
-spinner.info(chalk.default.bgBlue('Enter build mode'))
+common.spinner.info(chalk.default.bgBlue('Enter build mode'))
 ;(async () => {
   await build()
-  spinner.succeed('Finished building')
+  common.spinner.succeed('Finished building')
 })()
