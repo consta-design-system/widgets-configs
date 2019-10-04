@@ -1,5 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const mixins = require('gaz-utils')
+const mixins = require('@gaz/utils')
 
 const cssRules = [
   {
