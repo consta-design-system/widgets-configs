@@ -17,7 +17,7 @@ module.exports = {
     "[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$"
   ],
   setupFilesAfterEnv: [
-    '<rootDir>/node_modules/gaz-configs/config/jest/setup-tests.js'
+    '<rootDir>/node_modules/@gaz/configs/config/jest/setup-tests.js'
   ],
   testMatch: [
     "<rootDir>/src/**/__tests__/**/*.{ts,tsx}",
