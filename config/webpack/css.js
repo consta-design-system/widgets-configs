@@ -41,7 +41,7 @@ function* css({ onlyGenerateTypes } = {}) {
               require('postcss-functions')({
                 functions: {
                   'calc-size': function(size) {
-                    return mixins.calcSize(size)
+                    return mixins.calcSize(size, isNaN(size))
                   },
                 },
               }),
