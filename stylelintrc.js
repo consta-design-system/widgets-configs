@@ -37,6 +37,10 @@ module.exports = {
       }
     ],
     "selector-nested-pattern": "^&(:(?:hover|focus|after|before))|(.(.*))$",
-    "selector-pseudo-class-blacklist": ["root"]
+    "selector-pseudo-class-blacklist": ["root"],
+    "rule-empty-line-before": [
+      "always",
+      { ignore: ["after-comment", "first-nested" ] }
+    ]
   }
 }
