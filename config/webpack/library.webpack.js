@@ -3,6 +3,7 @@ const webpackMerge = require('webpack-merge')
 const TerserPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const nodeExternals = require('webpack-node-externals')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const getCommonConfig = require('./common.webpack')
 const isProduction = process.env.NODE_ENV === 'production'
@@ -31,7 +32,10 @@ const libConfig = {
     libraryTarget: 'umd',
   },
   externals: [nodeExternals()],
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin([{ from: 'types', to: 'types' }])
+  ],
 }
 
 module.exports = webpackMerge(getCommonConfig({ isLibBuilding: true }), libConfig)
