@@ -2,6 +2,7 @@ const path = require('path')
 const webpackMerge = require('webpack-merge')
 const TerserPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const nodeExternals = require('webpack-node-externals')
 
 const getCommonConfig = require('./common.webpack')
 const isProduction = process.env.NODE_ENV === 'production'
@@ -29,6 +30,7 @@ const libConfig = {
     filename: 'index.js',
     libraryTarget: 'umd',
   },
+  externals: [nodeExternals()],
   plugins: [new CleanWebpackPlugin()],
 }
 

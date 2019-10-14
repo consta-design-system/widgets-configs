@@ -50,14 +50,13 @@ module.exports = ({ withDocgen, isLibBuilding } = {}) => ({
             },
           },
           {
-            loader: 'ts-loader',
+            loader: 'awesome-typescript-loader',
             options: {
               compilerOptions: {
                 ...(isLibBuilding
                   ? {
                     ...tsConfig.compilerOptions,
                     moduleResolution: 'node',
-                    outDir: 'lib/@types',
                     incremental: !isProduction,
                     skipLibCheck: !isProduction,
                     typeRoots: ['node_modules/@types'],
@@ -66,6 +65,7 @@ module.exports = ({ withDocgen, isLibBuilding } = {}) => ({
                 module: 'esnext',
               },
               transpileOnly: !isLibBuilding,
+              compiler: 'ttypescript'
             },
           },
         ].filter(Boolean),

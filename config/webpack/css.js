@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const mixins = require('@gaz/utils')
+const { getLocalIdent } = require('css-loader/dist/utils')
 
 const cssRules = [
   {
@@ -30,7 +31,13 @@ function* css({ onlyGenerateTypes } = {}) {
           importLoaders: rule.use.length + 1,
           modules: {
             localIdentName: isProduction ? '[hash:base64:5]' : '[folder]__[local]--[hash:base64:5]',
-          },
+            getLocalIdent: (context, localIdentName, localName, options) => {
+              if (context.resourcePath.includes('node_modules')) {
+                return localName
+              }
+              return getLocalIdent(context, localIdentName, localName, options)
+            },
+          }
         },
       },
       {
