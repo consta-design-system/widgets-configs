@@ -50,7 +50,7 @@ module.exports = ({ withDocgen, isLibBuilding } = {}) => ({
             },
           },
           {
-            loader: 'awesome-typescript-loader',
+            loader: 'ts-loader',
             options: {
               compilerOptions: {
                 ...(isLibBuilding

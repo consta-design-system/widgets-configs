@@ -16,7 +16,6 @@
     "strict": true,
     "target": "es2017",
     "plugins": [
-      { "transform": "typescript-transform-paths" },
       { "transform": "typescript-transform-paths", "afterDeclarations": true }
     ]
   }
