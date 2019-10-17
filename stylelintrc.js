@@ -36,7 +36,7 @@ module.exports = {
         ]
       }
     ],
-    "selector-nested-pattern": "^&(:(?:hover|focus|after|before))|(.(.*))$",
+    "selector-nested-pattern": "^(&(?![a-zA-Z]).(.*))|(^(?![&a-zA-Z]).(.*))$",
     "selector-pseudo-class-blacklist": ["root"],
     "rule-empty-line-before": [
       "always",
