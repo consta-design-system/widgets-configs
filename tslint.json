@@ -67,6 +67,7 @@
     // Для .tsx двойные кавычки потому что prettier будет форсить их
     // https://github.com/prettier/prettier/pull/126
     "quotemark": [true, "single", "jsx-double"],
-    "readonly-array": true
+    "readonly-array": true,
+    "no-unused-expression": [true, "allow-fast-null-checks"]
   }
 }
