@@ -17,6 +17,7 @@ module.exports = {
       }
     ],
     "declaration-block-no-duplicate-properties": true,
+    "number-leading-zero": "always",
     "value-list-comma-newline-after": null,
     "selector-type-case": null,
     "selector-type-no-unknown": [
