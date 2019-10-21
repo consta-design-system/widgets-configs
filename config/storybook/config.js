@@ -2,6 +2,7 @@ import { addDecorator, configure } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { withInfo } from '@storybook/addon-info'
 import { withPropsTable } from 'storybook-addon-react-docgen'
+import { updateBaseSize } from '@gaz/utils'
 
 import '@/index.css'
 
@@ -18,6 +19,8 @@ const req = require.context('@', true, /.stories\.tsx$/)
 
 function loadStories() {
   req.keys().forEach(req)
+
+  updateBaseSize(16, window.document.body)
 }
 
 configure(loadStories, module)
