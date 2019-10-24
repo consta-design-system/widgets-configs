@@ -33,9 +33,9 @@ const libConfig = {
   },
   externals: [nodeExternals()],
   plugins: [
-    new CleanWebpackPlugin(),
+    isProduction && new CleanWebpackPlugin(),
     new CopyWebpackPlugin([{ from: 'types', to: 'types' }])
-  ],
+  ].filter(Boolean),
 }
 
 module.exports = webpackMerge(getCommonConfig({ isLibBuilding: true }), libConfig)
