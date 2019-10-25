@@ -27,7 +27,10 @@ module.exports = {
     "@typescript-eslint/ban-types": "error",
     "@typescript-eslint/class-name-casing": "error",
     "@typescript-eslint/indent": "off",
-    "@typescript-eslint/interface-name-prefix": "error",
+    "@typescript-eslint/interface-name-prefix": [
+      "error",
+      { "prefixWithI": "always" }
+    ],
     "@typescript-eslint/member-delimiter-style": [
       "off",
       "error",
@@ -88,21 +91,6 @@ module.exports = {
     "guard-for-in": "error",
     "id-match": "error",
     "import/no-default-export": "error",
-    "import/order": [
-      "error",
-      {
-        groups: [
-          [ 'builtin', 'external' ],
-          { name: 'absolute', pattern: '(^@/)' },
-          [
-              'parent',
-              'sibling',
-              'index'
-          ],
-          'flow'
-      ]
-      }
-    ],
     "linebreak-style": "off",
     "max-classes-per-file": [
       "error",
