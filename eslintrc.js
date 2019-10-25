@@ -23,7 +23,7 @@ module.exports = {
   },
   "rules": {
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": "error",
+    "@typescript-eslint/array-type": "off",
     "@typescript-eslint/ban-types": "error",
     "@typescript-eslint/class-name-casing": "error",
     "@typescript-eslint/indent": "off",
@@ -70,7 +70,7 @@ module.exports = {
     ],
     "@typescript-eslint/type-annotation-spacing": "off",
     "@typescript-eslint/unified-signatures": "error",
-    "arrow-body-style": "error",
+    "arrow-body-style": "off",
     "arrow-parens": [
       "off",
       "as-needed"
@@ -145,7 +145,7 @@ module.exports = {
     "no-unused-labels": "error",
     "no-var": "error",
     "object-shorthand": "error",
-    "prefer-arrow/prefer-arrow-functions": "error",
+    "prefer-arrow/prefer-arrow-functions": "off",
     "prefer-const": "error",
     "quote-props": "off",
     "radix": "error",
@@ -184,7 +184,40 @@ module.exports = {
           "no-reference-import": true,
           "prettier": true,
           "react-hooks-nesting": true,
-          "readonly-array": true
+          "readonly-array": true,
+          "ordered-imports": [
+            true,
+            {
+              "import-sources-order": "lowercase-first",
+              "module-source-path": "full",
+              "grouped-imports": true,
+              "groups": [
+                {
+                  "match": "^react",
+                  "order": 1
+                },
+                {
+                  "name": "Root",
+                  "match": "^@\/",
+                  "order": 99
+                },
+                {
+                  "name": "Parent dir",
+                  "match": "^[.][.]",
+                  "order": 100
+                },
+                {
+                  "name": "Current dir",
+                  "match": "^[.]",
+                  "order": 110
+                },
+                {
+                  "match": "^[^\\.]",
+                  "order": 10
+                }
+              ]
+            }
+          ],
         }
       }
     ],
