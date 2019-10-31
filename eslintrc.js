@@ -50,7 +50,7 @@ module.exports = {
     "@typescript-eslint/no-empty-interface": "error",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-misused-new": "error",
-    "@typescript-eslint/no-namespace": "error",
+    "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/triple-slash-reference": "error",
     "@typescript-eslint/no-use-before-declare": "off",
