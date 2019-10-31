@@ -173,6 +173,18 @@ module.exports = {
           "prettier": true,
           "react-hooks-nesting": true,
           "readonly-array": true,
+          "no-array-mutation": [true, {
+            "ignore-suffix": [
+              "copyWithin",
+              "fill",
+              "pop",
+              "push",
+              "reverse",
+              "shift",
+              "splice",
+              "unshift"
+            ]
+          }],
           "ordered-imports": [
             true,
             {
