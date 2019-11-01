@@ -65,7 +65,8 @@ module.exports = ({ withDocgen, isLibBuilding } = {}) => ({
                 module: 'esnext',
               },
               transpileOnly: !isLibBuilding,
-              compiler: 'ttypescript'
+              compiler: 'ttypescript',
+              context: root,
             },
           },
         ].filter(Boolean),
