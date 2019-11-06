@@ -27,7 +27,8 @@ module.exports = {
       true,
       {
         "ignoreTypes": [
-          "$dummyValue"
+          "$dummyValue",
+          "foreignObject"
         ]
       }
     ],
