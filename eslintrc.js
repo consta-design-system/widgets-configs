@@ -218,7 +218,13 @@ module.exports = {
               ]
             }
           ],
-          "import-blacklist": [true, ["@gaz/dashboard-constructor/lib/@types/(components|utils|ui)"]]
+          "import-blacklist": [
+            true,
+            [
+              "^@gaz/dashboard-constructor/lib/@types/(components|utils|ui)",
+              "^@gaz/dashboard-constructor/lib/@types/(dashboard|widgets)/[a-z0-9]*",
+            ]
+          ]
         }
       }
     ],
