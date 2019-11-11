@@ -13,6 +13,11 @@ addDecorator(
     header: false,
   })
 )
+addDecorator(storyFn => {
+  window.document.documentElement.lang = 'ru'
+
+  return storyFn()
+})
 
 // automatically import all files ending in *.stories.tsx
 const req = require.context('@', true, /.stories\.tsx$/)
