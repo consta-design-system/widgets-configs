@@ -99,6 +99,7 @@ module.exports = {
     "max-len": "off",
     "new-parens": "off",
     "newline-per-chained-call": "off",
+    "no-nested-ternary": "error",
     "no-bitwise": "error",
     "no-caller": "error",
     "no-cond-assign": "error",
