@@ -775,8 +775,8 @@
 
 "@gaz/configs@0.1.16":
   version "0.1.16"
-  resolved "https://nexus.csssr.space/repository/csssr/@gaz/configs/-/configs-0.1.16.tgz#6f1c511f17557e6ccb296e5867078f7b2a4c98b3"
-  integrity sha512-QD/94Y3i/SZvbVRovMeKB2/RrczDU0UVI2LiLj0D3FjUx1ObtG6NqCT3lhISt44lFDQ53hWCn9IX5gTN6mhVYw==
+  resolved "https://nexus.csssr.space/repository/csssr/@gaz/configs/-/configs-0.1.16.tgz#00915c93944d162b21d90af55594664f25b93e37"
+  integrity sha512-LmQeEqQRSgQISnPksKqlpNyifP/WhvsW8Le2cmH9cP3b1ji0Ay4dt9lN82groGIy64Y6hE9XUtfzl0xkM9nkqQ==
   dependencies:
     "@babel/core" "7.4.5"
     "@babel/plugin-proposal-class-properties" "7.4.4"
@@ -846,13 +846,13 @@
 
 "@gaz/utils@0.1.4":
   version "0.1.4"
-  resolved "https://nexus.csssr.space/repository/csssr/@gaz/utils/-/utils-0.1.4.tgz#28c53e3f18c59e1801b85346db3da9c417888484"
-  integrity sha512-dMId+Z89JblrGEEXGfEwkJNUy0TaHm+ctSAgEJHRLcgVZDNmnyfqmEF8i4nXBi93CQb943RmCfC5hPpBgmVEAw==
+  resolved "https://nexus.csssr.space/repository/csssr/@gaz/utils/-/utils-0.1.4.tgz#59d0db7f686d6220e9427fe3652135d7e98711ed"
+  integrity sha512-+tqHAvnLRDRVgPUByLqXe7iRZZ++CX4+abGTS6pMhGFZiUehFvjNovBOVRX9mSm5GQLOTf+iCw0Fhe2b19/haQ==
 
-"@gaz/utils@0.1.6":
-  version "0.1.6"
-  resolved "https://nexus.csssr.space/repository/csssr/@gaz/utils/-/utils-0.1.6.tgz#35729d0c2b125c35aa0f4888ed76e5a77b0c87e0"
-  integrity sha512-NMBKpF5Zj6x1RMijEk7JEmAJvATm7AVK8Amo1sH+rWTirkWtUdjd0Nqvnw8ULf7s0gJijmMMIa4x0gKSrtYcKA==
+"@gaz/utils@0.1.7":
+  version "0.1.7"
+  resolved "https://nexus.csssr.space/repository/csssr/@gaz/utils/-/utils-0.1.7.tgz#dbef7f88a8e9fb72e1ae254bad30521673627786"
+  integrity sha512-w5fP/HiFx+lhvJIi/0n7yuZ5SCUL294x7AWftAopbD7agyGg6WzowDGWLyzrLmrHS3yk5V8QhhDG6B3ZXo9Z3Q==
   dependencies:
     "@gaz/configs" "0.1.16"
     lodash "4.17.11"
