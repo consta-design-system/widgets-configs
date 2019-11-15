@@ -82,5 +82,9 @@
     "webpack-cli": "3.3.9",
     "webpack-merge": "4.2.1",
     "webpack-node-externals": "1.7.2"
+  },
+  "engines": {
+    "node": ">=10",
+    "yarn": ">=1.19.1"
   }
 }
