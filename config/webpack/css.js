@@ -1,5 +1,4 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const mixins = require('@gaz/utils/lib/css')
 const { getLocalIdent } = require('css-loader/dist/utils')
 
 const cssRules = [
@@ -45,13 +44,6 @@ function* css({ onlyGenerateTypes } = {}) {
         options: {
           plugins() {
             return [
-              require('postcss-functions')({
-                functions: {
-                  'calc-size': function(size) {
-                    return mixins.calcSize(size, isNaN(size))
-                  },
-                },
-              }),
               require('postcss-nested'),
               require('postcss-preset-env')({
                 stage: 2,

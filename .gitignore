@@ -6,3 +6,7 @@
 node_modules
 package-lock.json
 yarn-error.log
+
+# Yalc
+.yalc
+yalc.lock
