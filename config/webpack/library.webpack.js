@@ -30,6 +30,7 @@ const libConfig = {
     path: path.resolve(rootPath, 'lib'),
     filename: 'index.js',
     libraryTarget: 'umd',
+    publicPath: './',
   },
   externals: [nodeExternals()],
   plugins: [
