@@ -31,9 +31,22 @@ function* css({ onlyGenerateTypes } = {}) {
           modules: {
             localIdentName: isProduction ? '[hash:base64:5]' : '[folder]__[local]--[hash:base64:5]',
             getLocalIdent: (context, localIdentName, localName, options) => {
-              if (context.resourcePath.includes('node_modules')) {
+              if (
+                /**
+                 * Все что находится в node_modules не надо обрабатывать как
+                 * CSS Modules.
+                 */
+                context.resourcePath.includes('node_modules') ||
+                /**
+                 * Все что не относится к проекту где происходит сборка,
+                 * например symlink модулей из соседних директорий тоже не
+                 * должно обрабатываться через CSS Modules.
+                 */
+                !context.resourcePath.includes(context.rootContext)
+              ) {
                 return localName
               }
+
               return getLocalIdent(context, localIdentName, localName, options)
             },
           }
