@@ -72,6 +72,10 @@ module.exports = ({ withDocgen, isLibBuilding } = {}) => ({
         ].filter(Boolean),
       },
       {
+        test: /\.geojson$/,
+        loader: 'json-loader'
+      },
+      {
         test: files.fonts,
         use: [
           {
