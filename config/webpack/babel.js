@@ -1,4 +1,5 @@
 const isProduction = process.env.NODE_ENV === 'production'
+const isTest = process.env.NODE_ENV === 'test'
 
 module.exports = {
   presets: [
@@ -10,8 +11,8 @@ module.exports = {
         // Set the corejs version we are using to avoid warnings in console
         // This will need to change once we upgrade to corejs@3
         corejs: 3,
-        // Do not transform modules to CJS
-        modules: false,
+        // Transform modules to CJS only for jest
+        modules: isTest ? 'cjs' : false,
         // Exclude transforms that make all code slower
         exclude: ['transform-typeof-symbol'],
       },
