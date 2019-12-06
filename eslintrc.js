@@ -82,6 +82,7 @@ module.exports = {
     "complexity": "off",
     "constructor-super": "error",
     "curly": "error",
+    "no-case-declarations": "error",
     "dot-notation": "error",
     "eol-last": "off",
     "eqeqeq": [
