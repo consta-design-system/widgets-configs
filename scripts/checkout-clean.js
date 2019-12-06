@@ -1,11 +1,11 @@
-const { Dirent } = require('fs')
+const fs = require('fs')
 const ora = require('ora')
 const { searchAll } = require('./files-tools')
 
 const spinner = ora().start()
 
 /**
- * @param {Dirent} item
+ * @param {fs.Dirent} item
  */
 function remove(item) {
   if (item.isFile()) {
