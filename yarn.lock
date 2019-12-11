@@ -3662,6 +3662,11 @@ eslint-plugin-prettier@^2.2.0:
     fast-diff "^1.1.1"
     jest-docblock "^21.0.0"
 
+eslint-plugin-react-hooks@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-2.3.0.tgz#53e073961f1f5ccf8dd19558036c1fac8c29d99a"
+  integrity sha512-gLKCa52G4ee7uXzdLiorca7JIQZPPXRAQDXV83J4bUEeUuc5pIEyZYAZ45Xnxe5IuupxEqHS+hUhSLIimK1EMw==
+
 eslint-plugin-unicorn@12.1.0:
   version "12.1.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-12.1.0.tgz#6ebff6c90ecf4df7ce1615e18928d10bb50c2ff5"
@@ -9810,11 +9815,6 @@ tslint-plugin-prettier@2.0.1:
     eslint-plugin-prettier "^2.2.0"
     lines-and-columns "^1.1.6"
     tslib "^1.7.1"
-
-tslint-react-hooks@2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/tslint-react-hooks/-/tslint-react-hooks-2.1.1.tgz#d6066d0eef45b0ff8f5457c79e7cca2271e816a7"
-  integrity sha512-QdOog0JgU6hvMOWBcSK9n/Av+MOJoLl9W8VruvmsIfkgDgMfuwSwoVO6mpxB+8tpQCU/PDJvcLu3oo4qwiLCxw==
 
 tslint-react@4.0.0:
   version "4.0.0"

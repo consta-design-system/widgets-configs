@@ -15,6 +15,7 @@ module.exports = {
     "unicorn",
     "@typescript-eslint",
     "@typescript-eslint/tslint",
+    "react-hooks"
   ],
   "settings": {
     "react": {
@@ -152,12 +153,13 @@ module.exports = {
     ],
     "use-isnan": "error",
     "valid-typeof": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
     "@typescript-eslint/tslint/config": [
       "error",
       {
         "rulesDirectory": [
           "node_modules/tslint-react/rules",
-          "node_modules/tslint-react-hooks/dist",
           "node_modules/tslint-plugin-prettier/rules",
           "node_modules/tslint-immutable/rules"
         ],
@@ -173,7 +175,6 @@ module.exports = {
           "jsx-self-close": true,
           "no-reference-import": true,
           "prettier": true,
-          "react-hooks-nesting": true,
           "readonly-array": [true, {"ignore-prefix": "mutable"}],
           "no-array-mutation": [true, "ignore-new-array", {"ignore-prefix": "mutable"}],
           "ordered-imports": [
