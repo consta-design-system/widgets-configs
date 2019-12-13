@@ -24,7 +24,9 @@ module.exports = {
   },
   "rules": {
     "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": "off",
+    "@typescript-eslint/array-type": ["error", {
+      "default": "array-simple"
+    }],
     "@typescript-eslint/ban-types": "error",
     "@typescript-eslint/class-name-casing": "error",
     "@typescript-eslint/indent": "off",
