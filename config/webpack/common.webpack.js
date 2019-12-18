@@ -106,6 +106,15 @@ module.exports = ({ withDocgen, isLibBuilding } = {}) => ({
     alias: {
       '@': path.resolve(root, 'src'),
     },
+    /**
+     * Отключаем настройку определения настоящего пути по symlink, из-за этой
+     * настройки слинкованные модули не попадают в exclude и обрабатываются
+     * повторно, и в некоторых случаях из-за размера повторно обрабатываемых
+     * модулей может возникать проблема с `JavaScript heap out of memory`.
+     *
+     * https://webpack.js.org/configuration/resolve/#resolvesymlinks
+     */
+    symlinks: false,
   },
 
   node: {
