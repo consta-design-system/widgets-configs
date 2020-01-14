@@ -23,59 +23,6 @@ module.exports = {
     }
   },
   "rules": {
-    "@typescript-eslint/adjacent-overload-signatures": "error",
-    "@typescript-eslint/array-type": ["error", {
-      "default": "array-simple"
-    }],
-    "@typescript-eslint/ban-types": "error",
-    "@typescript-eslint/class-name-casing": "error",
-    "@typescript-eslint/indent": "off",
-    "@typescript-eslint/interface-name-prefix": [
-      "error",
-      { "prefixWithI": "always" }
-    ],
-    "@typescript-eslint/member-delimiter-style": [
-      "off",
-      "error",
-      {
-        "multiline": {
-          "delimiter": "none",
-          "requireLast": true
-        },
-        "singleline": {
-          "delimiter": "semi",
-          "requireLast": false
-        }
-      }
-    ],
-    "@typescript-eslint/member-ordering": "error",
-    "@typescript-eslint/no-empty-function": "error",
-    "@typescript-eslint/no-empty-interface": "error",
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-misused-new": "error",
-    "@typescript-eslint/no-namespace": "off",
-    "@typescript-eslint/no-parameter-properties": "off",
-    "@typescript-eslint/triple-slash-reference": "error",
-    "@typescript-eslint/no-use-before-define": "error",
-    "@typescript-eslint/no-var-requires": "error",
-    "@typescript-eslint/prefer-for-of": "error",
-    "@typescript-eslint/prefer-function-type": "error",
-    "@typescript-eslint/prefer-interface": "off",
-    "@typescript-eslint/prefer-namespace-keyword": "error",
-    "@typescript-eslint/quotes": [
-      "error",
-      "single"
-    ],
-    "@typescript-eslint/semi": [
-      "off",
-      null
-    ],
-    "@typescript-eslint/space-within-parens": [
-      "off",
-      "never"
-    ],
-    "@typescript-eslint/type-annotation-spacing": "off",
-    "@typescript-eslint/unified-signatures": "error",
     "arrow-body-style": "off",
     "arrow-parens": [
       "off",
@@ -222,5 +169,65 @@ module.exports = {
         }
       }
     ],
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/adjacent-overload-signatures": "error",
+        "@typescript-eslint/array-type": ["error", {
+          "default": "array-simple"
+        }],
+        "@typescript-eslint/ban-types": "error",
+        "@typescript-eslint/class-name-casing": "error",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/interface-name-prefix": [
+          "error",
+          { "prefixWithI": "always" }
+        ],
+        "@typescript-eslint/member-delimiter-style": [
+          "off",
+          "error",
+          {
+            "multiline": {
+              "delimiter": "none",
+              "requireLast": true
+            },
+            "singleline": {
+              "delimiter": "semi",
+              "requireLast": false
+            }
+          }
+        ],
+        "@typescript-eslint/member-ordering": "error",
+        "@typescript-eslint/no-empty-function": "error",
+        "@typescript-eslint/no-empty-interface": "error",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-misused-new": "error",
+        "@typescript-eslint/no-namespace": "off",
+        "@typescript-eslint/no-parameter-properties": "off",
+        "@typescript-eslint/triple-slash-reference": "error",
+        "@typescript-eslint/no-use-before-define": "error",
+        "@typescript-eslint/no-var-requires": "error",
+        "@typescript-eslint/prefer-for-of": "error",
+        "@typescript-eslint/prefer-function-type": "error",
+        "@typescript-eslint/prefer-interface": "off",
+        "@typescript-eslint/prefer-namespace-keyword": "error",
+        "@typescript-eslint/quotes": [
+          "error",
+          "single"
+        ],
+        "@typescript-eslint/semi": [
+          "off",
+          null
+        ],
+        "@typescript-eslint/space-within-parens": [
+          "off",
+          "never"
+        ],
+        "@typescript-eslint/type-annotation-spacing": "off",
+        "@typescript-eslint/unified-signatures": "error",
+      },
+    }
+  ],
 };
