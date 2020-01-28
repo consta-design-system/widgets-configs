@@ -2,7 +2,7 @@ const SLASH = "[/\\\\]"
 
 module.exports = {
   moduleNameMapper: {
-    '\\.(jpg|jpeg|png|gif|webp|svg|ttf|woff|woff2|)$': '<rootDir>/config/jest/mock-files.js',
+    '\\.(jpg|jpeg|png|gif|webp|svg|ttf|woff|woff2|)$': '<rootDir>/node_modules/@gaz/configs/config/jest/mock-files.js',
     "\\.css$": "identity-obj-proxy",
     "@/(.*)": "<rootDir>/src/$1"
   },
