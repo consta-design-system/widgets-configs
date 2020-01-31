@@ -132,7 +132,7 @@ module.exports = ({ withDocgen, isLibBuilding } = {}) => ({
           filename: 'index.css',
         }
         : {
-          chunkFilename: 'assets/css/[id].css',
+          chunkFilename: `assets/css/[id]${isProduction ? '.[contenthash]' : ''}.css`,
           filename: `assets/css/[name]${isProduction ? '.[contenthash]' : ''}.css`,
         }
     ),
