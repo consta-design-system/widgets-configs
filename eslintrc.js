@@ -15,7 +15,8 @@ module.exports = {
     "unicorn",
     "@typescript-eslint",
     "@typescript-eslint/tslint",
-    "react-hooks"
+    "react-hooks",
+    "prettier"
   ],
   "settings": {
     "react": {
@@ -104,13 +105,13 @@ module.exports = {
     "valid-typeof": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
+    "prettier/prettier": "error",
     "@typescript-eslint/tslint/config": [
       "error",
       {
         "rulesDirectory": [
           "node_modules/tslint-react/rules",
-          "node_modules/tslint-plugin-prettier/rules",
-          "node_modules/tslint-immutable/rules"
+          "node_modules/tslint-immutable/rules",
         ],
         "rules": {
           "comment-format": [
@@ -123,7 +124,6 @@ module.exports = {
           "jsx-no-string-ref": true,
           "jsx-self-close": true,
           "no-reference-import": true,
-          "prettier": true,
           "readonly-array": [true, {"ignore-prefix": "mutable"}],
           "no-array-mutation": [true, "ignore-new-array", {"ignore-prefix": "mutable"}],
           "ordered-imports": [
