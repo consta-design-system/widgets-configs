@@ -13,7 +13,7 @@ const runScripts = {
   })
 })
 
-const script = path.resolve('node_modules/@gaz/configs/scripts', `${runScripts[process.env.NODE_ENV]}.js`)
+const script = path.resolve('node_modules/@csssr/gpn-configs/scripts', `${runScripts[process.env.NODE_ENV]}.js`)
 
 if (!fs.existsSync(script)) {
   // eslint-disable-next-line no-console
