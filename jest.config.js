@@ -16,8 +16,8 @@ module.exports = {
     "^.+\\.(ts|tsx)$": "ts-jest",
     "^.+\\.(js|jsx)$": "<rootDir>/node_modules/@csssr/gpn-configs/config/jest/jsPreprocess.js"
   },
-  transformIgnorePatterns: [
-    `${SLASH}node_modules${SLASH}(?!@amcharts${SLASH}amcharts4-geodata${SLASH}).+\\.(js|jsx|ts|tsx)`
+  setupFiles: [
+    'core-js'
   ],
   setupFilesAfterEnv: [
     '<rootDir>/node_modules/@csssr/gpn-configs/config/jest/setup-tests.js'
