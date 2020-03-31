@@ -57,7 +57,6 @@ function* css({ onlyGenerateTypes } = {}) {
         options: {
           plugins() {
             return [
-              require('postcss-nested'),
               require('postcss-preset-env')({
                 stage: 2,
                 features: {
