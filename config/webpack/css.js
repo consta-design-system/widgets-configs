@@ -57,12 +57,13 @@ function* css({ onlyGenerateTypes } = {}) {
         options: {
           plugins() {
             return [
+              require('postcss-nested'),
               require('postcss-preset-env')({
                 stage: 2,
                 features: {
                   autoprefixer: true,
                   'custom-selectors': true,
-                  'nesting-rules': true,
+                  'nesting-rules': false,
                 },
               }),
               isProduction && require('cssnano')(),

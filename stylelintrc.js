@@ -41,7 +41,8 @@ module.exports = {
         ]
       }
     ],
-    "selector-nested-pattern": "^(&(?![a-zA-Z]).(.*))|(^(?![&a-zA-Z]).(.*))$",
+    "no-descending-specificity": null,
+    "selector-nested-pattern": /(^(&|:)(?![_a-zA-Z]).*$)|(^(?![&_a-zA-Z]).*$)/m,
     "selector-pseudo-class-blacklist": ["root"],
     "rule-empty-line-before": [
       "always",
