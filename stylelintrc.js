@@ -47,6 +47,10 @@ module.exports = {
       "always",
       { ignore: ["after-comment", "first-nested"] }
     ],
+    "order/order": [
+			"custom-properties",
+			"declarations"
+		],
     "order/properties-order": [
       [
         {
