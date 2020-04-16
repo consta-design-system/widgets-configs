@@ -10,6 +10,15 @@ module.exports = {
   "rules": {
     "declaration-colon-newline-after": null,
     "declaration-empty-line-before": null,
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "define-mixin",
+          "mixin"
+        ]
+      }
+    ],
     "at-rule-empty-line-before": [
       "always",
       {
