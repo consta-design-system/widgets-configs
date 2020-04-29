@@ -15,6 +15,7 @@ module.exports = {
     "unicorn",
     "@typescript-eslint",
     "@typescript-eslint/tslint",
+    "react",
     "react-hooks",
     "prettier"
   ],
@@ -169,6 +170,7 @@ module.exports = {
         }
       }
     ],
+    "react/button-has-type": "error"
   },
   "overrides": [
     {
