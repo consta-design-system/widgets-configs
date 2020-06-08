@@ -21,10 +21,10 @@ jobs:
       with:
         bodyFile: 'TEMP_CHANGELOG.md'
         token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Use Node.js 10
+    - name: Use Node.js 13
       uses: actions/setup-node@v1
       with:
-        node-version: 10
+        node-version: 13
         registry-url: 'https://npm.pkg.github.com'
     - name: Publish to gh registry
       run: |
