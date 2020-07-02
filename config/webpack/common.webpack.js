@@ -25,7 +25,7 @@ module.exports = ({ withDocgen, isLibBuilding } = {}) => ({
         test: files.js,
         use: [
           {
-            loader: 'babel-loader',
+            loader: require.resolve('babel-loader'),
             options: {
               babelrc: false,
               configFile: false,
@@ -40,7 +40,7 @@ module.exports = ({ withDocgen, isLibBuilding } = {}) => ({
             },
           },
           withDocgen && {
-            loader: 'react-docgen-typescript-loader',
+            loader: require.resolve('react-docgen-typescript-loader'),
             options: {
               compilerOptions: {
                 ...tsConfig.compilerOptions,
@@ -50,7 +50,7 @@ module.exports = ({ withDocgen, isLibBuilding } = {}) => ({
             },
           },
           {
-            loader: 'ts-loader',
+            loader: require.resolve('ts-loader'),
             options: {
               compilerOptions: {
                 ...(isLibBuilding
@@ -73,13 +73,13 @@ module.exports = ({ withDocgen, isLibBuilding } = {}) => ({
       },
       {
         test: /\.geojson$/,
-        loader: 'json-loader'
+        loader: require.resolve('json-loader')
       },
       {
         test: files.fonts,
         use: [
           {
-            loader: 'file-loader',
+            loader: require.resolve('file-loader'),
             query: {
               name: `assets/fonts/[name]${isProduction ? '.[hash]' : ''}.[ext]`,
             },
@@ -90,7 +90,7 @@ module.exports = ({ withDocgen, isLibBuilding } = {}) => ({
         test: files.images,
         use: [
           {
-            loader: 'file-loader',
+            loader: require.resolve('file-loader'),
             query: {
               name: `assets/img/[name]${isProduction ? '.[hash]' : ''}.[ext]`,
             },
