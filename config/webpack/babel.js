@@ -4,7 +4,7 @@ const isTest = process.env.NODE_ENV === 'test'
 module.exports = {
   presets: [
     [
-      '@babel/env',
+      require('@babel/preset-env').default,
       {
         // Allow importing core-js in entrypoint and use browserlist to select polyfills
         useBuiltIns: 'entry',
@@ -18,7 +18,7 @@ module.exports = {
       },
     ],
     [
-      '@babel/react',
+      require('@babel/preset-react').default,
       {
         // Adds component stack to warning messages
         // Adds __self attribute to JSX which React will use for some warnings
@@ -30,9 +30,9 @@ module.exports = {
     ],
   ],
   plugins: [
-    ['@babel/proposal-class-properties', { loose: true }],
+    [require('@babel/plugin-proposal-class-properties').default, { loose: true }],
     [
-      '@babel/proposal-object-rest-spread',
+      require('@babel/plugin-proposal-object-rest-spread').default,
       {
         useBuiltIns: true,
       },
@@ -40,7 +40,7 @@ module.exports = {
     // Polyfills the runtime needed for async/await, generators, and friends
     // https://babeljs.io/docs/en/babel-plugin-transform-runtime
     [
-      '@babel/transform-runtime',
+      require('@babel/plugin-transform-runtime').default,
       {
         corejs: false,
         helpers: true,
@@ -48,7 +48,7 @@ module.exports = {
       },
     ],
     [
-      'named-asset-import',
+      require('babel-plugin-named-asset-import'),
       {
         loaderMap: {
           svg: {
@@ -61,21 +61,21 @@ module.exports = {
       ? [
         // Treat React JSX elements as value types and hoist them to the highest scope
         // https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-react-constant-elements
-        '@babel/transform-react-constant-elements',
+        require('@babel/plugin-transform-react-constant-elements').default,
 
         // Replaces the React.createElement function with one that is more optimized for production
         // https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-react-inline-elements
-        '@babel/transform-react-inline-elements',
+        require('@babel/plugin-transform-react-inline-elements').default,
 
         // Remove unnecessary React propTypes from the production build
         // https://github.com/oliviertassinari/babel-plugin-transform-react-remove-prop-types
         [
-          'transform-react-remove-prop-types',
+          require('babel-plugin-transform-react-remove-prop-types').default,
           {
             removeImport: true,
           },
         ],
       ]
-      : ['react-hot-loader/babel']),
+      : [require('react-hot-loader/babel')]),
   ],
 }

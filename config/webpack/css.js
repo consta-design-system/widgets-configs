@@ -23,9 +23,9 @@ function* css({ onlyGenerateTypes } = {}) {
             hmr: !isProduction,
           },
         },
-      !isProduction || onlyGenerateTypes ? 'css-modules-typescript-loader' : null,
+      !isProduction || onlyGenerateTypes ? require.resolve('css-modules-typescript-loader') : null,
       {
-        loader: 'css-loader',
+        loader: require.resolve('css-loader'),
 
         options: {
           importLoaders: rule.use.length + 1,
@@ -54,7 +54,7 @@ function* css({ onlyGenerateTypes } = {}) {
         },
       },
       {
-        loader: 'postcss-loader',
+        loader: require.resolve('postcss-loader'),
         options: {
           plugins() {
             return [
