@@ -8,6 +8,12 @@ module.exports = {
     "stylelint-order"
   ],
   "rules": {
+    "length-zero-no-unit": [
+      true,
+      {
+        "ignore": ["custom-properties"]
+      }
+    ],
     "declaration-colon-newline-after": null,
     "declaration-empty-line-before": null,
     "at-rule-no-unknown": [
