@@ -1,4 +1,3 @@
-const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { getLocalIdent } = require('css-loader/dist/utils')
 
@@ -55,25 +54,6 @@ function* css({ onlyGenerateTypes } = {}) {
       },
       {
         loader: require.resolve('postcss-loader'),
-        options: {
-          plugins() {
-            return [
-              require('postcss-mixins')({
-                mixinsFiles: path.join(process.cwd(), 'src/styles/mixins/**/*.css'),
-              }),
-              require('postcss-nested'),
-              require('postcss-preset-env')({
-                stage: 2,
-                features: {
-                  autoprefixer: true,
-                  'custom-selectors': true,
-                  'nesting-rules': false,
-                },
-              }),
-              isProduction && require('cssnano')(),
-            ].filter(Boolean)
-          },
-        },
       },
       ...rule.use,
     ]
