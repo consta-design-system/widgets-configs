@@ -21,6 +21,13 @@ module.exports = ({ withDocgen, isLibBuilding } = {}) => ({
     rules: [
       ...css(),
       {
+        test: /\.js$/,
+        enforce: 'pre',
+        use: [{
+          loader: require.resolve('source-map-loader'),
+        }],
+      },
+      {
         exclude: /node_modules/,
         test: files.js,
         use: [
@@ -73,7 +80,9 @@ module.exports = ({ withDocgen, isLibBuilding } = {}) => ({
       },
       {
         test: /\.geojson$/,
-        loader: require.resolve('json-loader')
+        use: [{
+          loader: require.resolve('json-loader'),
+        }],
       },
       {
         test: files.fonts,
