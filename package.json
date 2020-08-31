@@ -19,6 +19,7 @@
     "@babel/preset-react": "7.0.0",
     "@hot-loader/react-dom": "16.8.6",
     "@svgr/webpack": "4.3.3",
+    "@testing-library/jest-dom": "5.11.4",
     "@types/jest": "24.0.15",
     "@types/react-hot-loader": "4.1.0",
     "@typescript-eslint/eslint-plugin": "2.26.0",
@@ -80,7 +81,8 @@
   "peerDependencies": {
     "react": "*",
     "react-dom": "*",
-    "react-test-renderer": "*"
+    "react-test-renderer": "*",
+    "@testing-library/react": "*"
   },
   "engines": {
     "node": ">=13",
