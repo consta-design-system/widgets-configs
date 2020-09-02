@@ -11,7 +11,6 @@ const CONTEXT = `${process.cwd()}/node_modules/`
 const requireWithContext = (moduleName) => require(CONTEXT + moduleName)
 
 require('jest-extended')
-require('@testing-library/jest-dom')
 
 global.React = requireWithContext('react')
 global.TestRenderer = requireWithContext('react-test-renderer')
