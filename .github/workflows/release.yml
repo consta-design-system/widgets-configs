@@ -2,8 +2,7 @@ name: Release
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches: npm
 
 jobs:
   build:
@@ -19,18 +18,21 @@ jobs:
     - name: Create and publish realese
       uses: ncipollo/release-action@v1
       with:
+        tag: v1.1.1
         bodyFile: 'TEMP_CHANGELOG.md'
         token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Use Node.js 13
+    - name: Use Node.js 12
       uses: actions/setup-node@v1
       with:
-        node-version: 13
+        node-version: 12
         registry-url: 'https://npm.pkg.github.com'
-    - name: Publish to gh registry
+    - name: Set npm token
+      uses: filipstefansson/set-npm-token-action@v1
+      with:
+        token: ${{ secrets.NPM_REGISTRY_TOKEN }}
+    - name: Publish to npm
       run: |
         yarn policies set-version 1.19.1
         yarn
         npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
