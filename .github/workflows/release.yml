@@ -18,7 +18,7 @@ jobs:
     - name: Create and publish realese
       uses: ncipollo/release-action@v1
       with:
-        tag: v1.1.1
+        tag: v1.1.2-0
         bodyFile: 'TEMP_CHANGELOG.md'
         token: ${{ secrets.GITHUB_TOKEN }}
     - name: Use Node.js 12
