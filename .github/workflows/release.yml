@@ -21,16 +21,17 @@ jobs:
       with:
         bodyFile: 'TEMP_CHANGELOG.md'
         token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Use Node.js 13
+    - name: Use Node.js 12
       uses: actions/setup-node@v1
       with:
-        node-version: 13
-        registry-url: 'https://npm.pkg.github.com'
-    - name: Publish to gh registry
+        node-version: 12
+    - name: Set npm token
+      uses: filipstefansson/set-npm-token-action@v1
+      with:
+        token: ${{ secrets.NPM_REGISTRY_TOKEN }}
+    - name: Publish to npm
       run: |
         yarn policies set-version 1.19.1
         yarn
         npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
