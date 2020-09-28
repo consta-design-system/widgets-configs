@@ -66,12 +66,6 @@ module.exports = {
     "no-irregular-whitespace": "off",
     "no-multiple-empty-lines": "off",
     "no-new-wrappers": "error",
-    "no-shadow": [
-      "error",
-      {
-        "hoist": "all"
-      }
-    ],
     "no-throw-literal": "error",
     "no-trailing-spaces": "off",
     "no-undef-init": "error",
@@ -180,12 +174,29 @@ module.exports = {
         "@typescript-eslint/array-type": ["error", {
           "default": "array-simple"
         }],
-        "@typescript-eslint/ban-types": "error",
-        "@typescript-eslint/class-name-casing": "error",
-        "@typescript-eslint/indent": "off",
-        "@typescript-eslint/interface-name-prefix": [
+        "@typescript-eslint/ban-types": [
           "error",
-          { "prefixWithI": "always" }
+          {
+            "types": {
+              "{}": false
+            }
+          }
+        ],
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "interface",
+            "format": ["PascalCase"],
+            "custom": {
+              "regex": "^I[A-Z]",
+              "match": false
+            }
+          },
+          {
+            "selector": "class",
+            "format": ["PascalCase"]
+          }
         ],
         "@typescript-eslint/member-delimiter-style": [
           "off",
@@ -210,7 +221,6 @@ module.exports = {
         "@typescript-eslint/no-parameter-properties": "off",
         "@typescript-eslint/triple-slash-reference": "error",
         "@typescript-eslint/no-use-before-define": "error",
-        "@typescript-eslint/no-var-requires": "error",
         "@typescript-eslint/prefer-for-of": "error",
         "@typescript-eslint/prefer-function-type": "error",
         "@typescript-eslint/prefer-interface": "off",
@@ -229,6 +239,7 @@ module.exports = {
         ],
         "@typescript-eslint/type-annotation-spacing": "off",
         "@typescript-eslint/unified-signatures": "error",
+        "@typescript-eslint/no-shadow": ["error"]
       },
     }
   ],
