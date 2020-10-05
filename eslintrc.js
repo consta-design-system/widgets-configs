@@ -101,6 +101,12 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
     "prettier/prettier": "error",
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        extendDefaults: true
+      }
+    ],
     "@typescript-eslint/tslint/config": [
       "error",
       {
@@ -174,14 +180,6 @@ module.exports = {
         "@typescript-eslint/array-type": ["error", {
           "default": "array-simple"
         }],
-        "@typescript-eslint/ban-types": [
-          "error",
-          {
-            "types": {
-              "{}": false
-            }
-          }
-        ],
         "@typescript-eslint/indent": "off",
         "@typescript-eslint/naming-convention": [
           "error",
