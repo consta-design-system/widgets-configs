@@ -1,3 +1,5 @@
+var spellcheckConfig = require('./config/eslint/spellcheckConfig');
+
 module.exports = {
   "env": {
     "browser": true,
@@ -17,7 +19,8 @@ module.exports = {
     "@typescript-eslint/tslint",
     "react",
     "react-hooks",
-    "prettier"
+    "prettier",
+    "spellcheck"
   ],
   "settings": {
     "react": {
@@ -86,6 +89,21 @@ module.exports = {
     "quote-props": "off",
     "radix": "error",
     "space-before-function-paren": "off",
+    "spellcheck/spell-checker": [1,
+      {
+        "comments": true,
+        "strings": true,
+        "templates": true,
+        "identifiers": false,
+        "lang": {
+          "comments": "ru_RU",
+          "strings": "ru_RU",
+          "templates": "ru_RU"
+        },
+        "minLength": 4,
+        ...spellcheckConfig
+      }
+    ],
     "unicorn/filename-case": [
       "error",
       {
