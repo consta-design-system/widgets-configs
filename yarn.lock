@@ -4195,9 +4195,9 @@ eslint-plugin-react@7.19.0:
     string.prototype.matchall "^4.0.2"
     xregexp "^4.3.0"
 
-"eslint-plugin-spellcheck@github:typeetfunc/eslint-plugin-spellcheck#v0.0.17-multilang-1.0.1":
+"eslint-plugin-spellcheck@github:typeetfunc/eslint-plugin-spellcheck#v0.0.17-multilang-1.0.2":
   version "0.0.17"
-  resolved "https://codeload.github.com/typeetfunc/eslint-plugin-spellcheck/tar.gz/4aaf24037191e9331acf1ecb5d34053ff63ac9ae"
+  resolved "https://codeload.github.com/typeetfunc/eslint-plugin-spellcheck/tar.gz/05713db6acbc53d09de8f3f3d620c0a0ffae2ba3"
   dependencies:
     globals "^13.0.0"
     hunspell-spellchecker "^1.0.2"
