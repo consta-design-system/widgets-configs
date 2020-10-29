@@ -14,3 +14,9 @@ NPM: https://www.npmjs.com/package/@consta/widgets-configs
 ## Подключение без публикации
 
 Обычно для подключения пакета без публикации можно использовать `yarn link`
+
+Для локального тестирования совместимости с другими проектами стоит использовать утилиту [Yalc](https://github.com/whitecolor/yalc)
+1. `Yalc` можно установить глобально или использовать без установки с помощью [npx](https://www.npmjs.com/package/npx)
+2. Опубликовать пакет локально ``yalc publish``
+3. Перейти в корневую директорию проекта в который хотим добавить локальный пакет
+4. Локально подключить пакет в проект `yalc link @consta/widgets-configs --yarn` или `yalc add @consta/widgets-configs --yarn`
