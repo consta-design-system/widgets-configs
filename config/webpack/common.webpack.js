@@ -101,7 +101,7 @@ module.exports = ({ withDocgen, isLibBuilding } = {}) => ({
           {
             loader: require.resolve('file-loader'),
             query: {
-              name: `assets/img/[name]${isProduction ? '.[hash]' : ''}.[ext]`,
+              name: `assets/img/[name].[hash].[ext]`,
             },
           },
         ],
