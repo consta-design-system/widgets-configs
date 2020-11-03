@@ -20,7 +20,8 @@ module.exports = {
     "react",
     "react-hooks",
     "prettier",
-    "spellcheck"
+    "spellcheck",
+    "jest-dom"
   ],
   "settings": {
     "react": {
@@ -188,7 +189,15 @@ module.exports = {
         }
       }
     ],
-    "react/button-has-type": "error"
+    "react/button-has-type": "error",
+    "jest-dom/prefer-checked": "warn",
+    "jest-dom/prefer-empty": "warn",
+    "jest-dom/prefer-enabled-disabled": "warn",
+    "jest-dom/prefer-required": "warn",
+    "jest-dom/prefer-focus": "warn",
+    "jest-dom/prefer-to-have-attribute": "warn",
+    "jest-dom/prefer-to-have-style": "warn",
+    "jest-dom/prefer-to-have-text-content": "warn"
   },
   "overrides": [
     {
