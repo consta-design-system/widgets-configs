@@ -21,14 +21,26 @@ module.exports = {
     "react-hooks",
     "prettier",
     "spellcheck",
-    "jest-dom"
+    "jest-dom",
+    "jsdoc"
   ],
+  "extends": ["plugin:jsdoc/recommended"],
   "settings": {
     "react": {
       "version": "detect"
     }
   },
   "rules": {
+    "react/jsx-key": 2,
+    "react/jsx-no-bind": [2, { "allowArrowFunctions": true }],
+    "react/no-string-refs": 2,
+    "react/self-closing-comp": 1,
+    "spaced-comment": ["error", "always"],
+    "jsdoc/require-returns": "off",
+    "jsdoc/require-param": "off",
+    "jsdoc/require-param-type": "off",
+    "jsdoc/require-jsdoc": "off",
+
     "arrow-body-style": "off",
     "arrow-parens": [
       "off",
@@ -130,21 +142,9 @@ module.exports = {
       "error",
       {
         "rulesDirectory": [
-          "node_modules/tslint-react/rules",
           "node_modules/tslint-immutable/rules",
         ],
         "rules": {
-          "comment-format": [
-            true,
-            "check-space"
-          ],
-          "jsdoc-format": true,
-          "jsx-key": true,
-          "jsx-no-bind": true,
-          "jsx-no-string-ref": true,
-          "jsx-self-close": true,
-          "no-reference-import": true,
-          "readonly-array": [true, {"ignore-prefix": "mutable"}],
           "no-array-mutation": [true, "ignore-new-array", {"ignore-prefix": "mutable"}],
           "ordered-imports": [
             true,
@@ -237,10 +237,13 @@ module.exports = {
             }
           }
         ],
+        "@typescript-eslint/array-type": ["error", {
+          "default": "array-simple"
+        }],
         "@typescript-eslint/member-ordering": "error",
         "@typescript-eslint/no-empty-function": "error",
         "@typescript-eslint/no-empty-interface": "error",
-        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-explicit-any": "error",
         "@typescript-eslint/no-misused-new": "error",
         "@typescript-eslint/no-namespace": "off",
         "@typescript-eslint/no-parameter-properties": "off",
